@@ -23,7 +23,7 @@ def leftClick():
     print 'CLICK'
 
 def mousePos(cord):
-    win32api,SetCursorPos((x_pad + cord[0], y_pad + cord[1]))
+    win32api.SetCursorPos((x_pad + cord[0], y_pad + cord[1]))
 
 def get_cords():
     x,y = win32api.GetCursorPos()
@@ -34,18 +34,19 @@ def get_cords():
 color_text = {
     37950: 'green',
     38061: 'gray',
+    37380: 'blue',
     37311: 'purple',
-    38545: 'red',
-    37380: 'blue'
+    37783: 'orange',
+    38545: 'red'
     }
 
 color_color = {
-    8579: 'green',
-    8606: 'gray',
-    8572: 'blue',
-    8568: 'purple',
-    8593: 'orange',
-    8536: 'red'
+    'green':8579,
+    'gray':8609,
+    'blue':8572,
+    'purple':8568,
+    'orange':8593,
+    'red':8536
     }
 
 class Cord:
@@ -56,13 +57,13 @@ class Cord:
     third_box = (222, 554)
     
 
-def writtenColor():
+def titleColor():
     box = (x_pad+149, y_pad+96, x_pad+251, y_pad+183)
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
     print a
-    im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
 def colorBox_1():
@@ -70,8 +71,8 @@ def colorBox_1():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
-    im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # print a
+    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
 def colorBox_2():
@@ -79,8 +80,8 @@ def colorBox_2():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
-    im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # print a
+    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
 def colorBox_3():
@@ -88,6 +89,40 @@ def colorBox_3():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
-    im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # print a
+    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
+
+def Go():
+    for xx in color_text:
+        if titleColor() == xx:
+            dd = color_color[color_text[xx]]
+            break
+    dd = color_color[color_text[xx]]
+    if dd == colorBox_1():
+        # click first box
+        mousePos(Cord.first_box)
+        leftClick()
+        print 'first'
+        #time.sleep(.1)
+        return
+    elif dd == colorBox_2():
+        # click second oox
+        mousePos(Cord.second_box)
+        leftClick()
+        print 'second'
+        #time.sleep(.1)
+        return
+    elif dd == colorBox_3():
+        # click third box
+        mousePos(Cord.third_box)
+        leftClick()
+        print 'third'
+        #time.sleep(.1)
+        return
+
+def start():
+    for x in range(0,100):
+        Go()
+        time.sleep(.1)
+                                       
