@@ -8,10 +8,14 @@ import time
 x_pad = 459
 y_pad = 100
 
-def snapShot():
+if not os.path.exists(os.getcwd() + '\\images'):    
+    os.makedirs(os.getcwd() + '\\images')
+
+def snapShot():     # it was used for setting the co-ordinate of the game
     box = (x_pad+1, y_pad+1, x_pad+445, y_pad+667)
     im = ImageGrab.grab(box)
-    im.save(os.getcwd() + '\\actual_snap_' + str(int(time.time())) + '.png', 'PNG')
+    im = ImageGrab.grab(box)
+    im.save(os.getcwd() + '\\images\\actual_snap_' + str(int(time.time())) + '.png', 'PNG')
 
 def main():
     snapShot()

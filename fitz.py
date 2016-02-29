@@ -1,24 +1,31 @@
+""" 
+All coordinates assume a screen resolution of 1280x1024, and Chrome 
+maximized with the Bookmarks Toolbar enabled.
+x_pad = 459
+y_pad = 100
+Play area =  x_pad+1, y_pad+1, 904, 767
+"""
+
 from PIL import ImageGrab
 import os
 import time
 from PIL import ImageOps
 from numpy import *
 import win32api, win32con
+from Tkinter import *
 
-# Global
-# --------
-x_pad = 459
-y_pad = 100
+if not os.path.exists(os.getcwd() + '\\images'):    
+    os.makedirs(os.getcwd() + '\\images')
 
-def snapShot():
+def snapShot():     
     box = (x_pad+1, y_pad+1, x_pad+445, y_pad+667)
     im = ImageGrab.grab(box)
     im = ImageGrab.grab(box)
-    im.save(os.getcwd() + '\\actual_snap_' + str(int(time.time())) + '.png', 'PNG')
+    im.save(os.getcwd() + '\\images\\actual_snap_' + str(int(time.time())) + '.png', 'PNG')
 
 def leftClick():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-    time.sleep(.1)
+    time.sleep(.99)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
     print 'CLICK'
 
@@ -31,39 +38,19 @@ def get_cords():
     y = y - y_pad
     print x,y
 
-color_text = {
-    37950: 'green',
-    38061: 'gray',
-    37380: 'blue',
-    37311: 'purple',
-    37783: 'orange',
-    38545: 'red'
-    }
-
-color_color = {
-    'green':8579,
-    'gray':8609,
-    'blue':8572,
-    'purple':8568,
-    'orange':8593,
-    'red':8536
-    }
-
-class Cord:
+class Cord:                 
     play = (229, 250)
-    
     first_box = (222, 269)
     second_box = (222, 412)
     third_box = (222, 554)
     
-
 def titleColor():
     box = (x_pad+149, y_pad+96, x_pad+251, y_pad+183)
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
     print a
-    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # im.save(os.getcwd() + '\\image\\title_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
 def colorBox_1():
@@ -72,7 +59,7 @@ def colorBox_1():
     a = array(im.getcolors())
     a = a.sum()
     # print a
-    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # im.save(os.getcwd() + '\\image\\box_1_snap' + str(int(time.time())) + '.png', 'PNG')     # for debugging
     return a
 
 def colorBox_2():
@@ -81,7 +68,7 @@ def colorBox_2():
     a = array(im.getcolors())
     a = a.sum()
     # print a
-    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # im.save(os.getcwd() + '\\image\\box_2_snap' + str(int(time.time())) + '.png', 'PNG')     # for debugging
     return a
 
 def colorBox_3():
@@ -90,7 +77,7 @@ def colorBox_3():
     a = array(im.getcolors())
     a = a.sum()
     # print a
-    # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
+    # im.save(os.getcwd() + '\\box_3_snap' + str(int(time.time())) + '.png', 'PNG')     # for debugging
     return a
 
 def Go():
@@ -121,8 +108,50 @@ def Go():
         #time.sleep(.1)
         return
 
+def gui():
+    gui_d = Tk()
+    gui_d.geometry('200x100+800+400')
+    gui_d.title("Fitz-Color Bot")
+    gui_d.mainloop()
+    label_1 = Label(gui_d,text = 'Enter the Score').pack()
+    button_1 = Button(gui_d, text = "OK", command = pass_text()).pack()
+
+    def pass_text():
+        return label_1.text
+
+    
+
 def start():
-    for x in range(0,100):
+    for x in range(0,130):
         Go()
-        time.sleep(.1)
-                                       
+        time.sleep(.019)
+#---------------------------------------------------------------------------------
+        
+# Global
+# --------
+x_pad = 459
+y_pad = 100
+
+color_text = {
+    37950: 'green',
+    38061: 'gray',
+    37380: 'blue',
+    37311: 'purple',
+    37783: 'orange',
+    38545: 'red'
+    }
+
+color_color = {
+    'green':8579,
+    'gray':8609,
+    'blue':8572,
+    'purple':8568,
+    'orange':8593,
+    'red':8536
+    }
+
+def main():
+    pass
+
+if __name__ == '__main__':
+    main()
