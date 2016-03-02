@@ -5,7 +5,7 @@ with Task bar at the bottom
 Operating System: Windows 10
 x_pad = 459
 y_pad = 100
-Play area =  x_pad+1, y_pad+1, 904, 767
+Play area =  x_pad+1, y_pad+1, 904, 758
 Precaution: don't move cursor while bot is running,
 bot might get disturbed :P
 """
@@ -135,7 +135,7 @@ def Go():
 
 
 def start():
-    for x in range(0,int(100)):
+    for x in range(0,100):
         Go()
         time.sleep(.022)
 
