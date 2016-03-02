@@ -21,7 +21,7 @@ HOW TO PLAY
 6) Run the start() function in python shell.  
 
 
-![Fitz-Color](http://gph.is/1QLEIwW)
+![Fitz-Color](http://i.imgur.com/bHmuMVF.gif)
 
 
 ### Version
