@@ -32,7 +32,6 @@ This basic of this project is pattern matching of specified co-ordinate so, it m
 - Precaution: don't move cursor while bot is running,
 bot might get disturbed :P
 
-###### next update: GUI with tkinter.  
 
 ###### * any sugestion and issues are more than welcome.
 
