@@ -15,17 +15,11 @@ HOW TO PLAY
 ---
 1) Go to this link [Fitz-Color](https://play.famobi.com/fitz-color) .    
 2) Make sure that the game is in the center without anything overlaping over it.  
-3) Right click on fitz.py file and click on Edit with IDLE.  
-4) Move it away from the Game screen.  
-5) Run the file.  
-6) Run the start() function in python shell.  
+3) Open fitz.pyw.    
+4) Enter the score and press ok.  
 
+![Fitz-Color](http://i.imgur.com/ZhK0nwv.gif)  
 
-![Fitz-Color](http://i.imgur.com/bHmuMVF.gif)
-
-
-### Version
-1.0.0
 
 ##### Things to take care of 
 This basic of this project is pattern matching of specified co-ordinate so, it might need your attention. 
