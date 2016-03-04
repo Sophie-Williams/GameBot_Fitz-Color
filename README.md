@@ -22,7 +22,7 @@ HOW TO PLAY
 
 
 ##### Things to take care of 
-This basic of this project is pattern matching of specified co-ordinate so, it might need your attention. 
+This basis of this project is pattern matching of predefine co-ordinate on the screen, it might need your attention. 
 - All coordinates assume a screen resolution of 1280x1024.
 - Chrome maximized with the Bookmarks Toolbar enabled.
 - Task bar at the bottom
