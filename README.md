@@ -9,7 +9,7 @@ Dependencies
 2)[PyWin](https://sourceforge.net/projects/pywin32/)  (Python for Windows Extension).   
 3)[NUMPY](http://www.scipy.org/scipylib/download.html)  (Numeric Python).
 4)[PYTHON3](https://www.python.org/downloads/release/python-343/) (Python 3).  
-5)(Recommended PC resolutionn 1366x768).
+5)(Recommended PC resolution 1366x768).
 
 Meanwhile, if you want to play the game it is [here](https://play.famobi.com/fitz-color) 
 
