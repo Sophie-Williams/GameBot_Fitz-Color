@@ -24,7 +24,7 @@ def titleColor():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print(a)
     im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -33,7 +33,7 @@ def colorBox_1():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -42,7 +42,7 @@ def colorBox_2():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -51,7 +51,7 @@ def colorBox_3():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 

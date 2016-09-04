@@ -16,7 +16,7 @@ import time
 from PIL import ImageOps
 from numpy import *
 import win32api, win32con
-import Tkinter as tk
+import tkinter as tk
 
 # Global
 # --------
@@ -33,7 +33,7 @@ def leftClick():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
     time.sleep(.095)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-    print 'CLICK'
+    print ('CLICK')
 
 def mousePos(cord):
     win32api.SetCursorPos((x_pad + cord[0], y_pad + cord[1]))
@@ -42,15 +42,15 @@ def get_cords():
     x,y = win32api.GetCursorPos()
     x = x - x_pad
     y = y - y_pad
-    print x,y
+    print (x,y)
 
 color_text = {
-    34596: 'green',
-    33348: 'gray',
-    32333: 'blue',
-    33368: 'purple',
-    35696: 'orange',
-    30032: 'red'
+    34400: 'green',
+    33211: 'gray',
+    32215: 'blue',
+    32415: 'purple',
+    35498: 'orange',
+    30465: 'red'
     }
 
 color_color = {
@@ -74,7 +74,7 @@ def titleColor():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -83,7 +83,7 @@ def colorBox_1():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -92,7 +92,7 @@ def colorBox_2():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -101,7 +101,7 @@ def colorBox_3():
     im = ImageOps.grayscale(ImageGrab.grab(box))
     a = array(im.getcolors())
     a = a.sum()
-    print a
+    print (a)
     # im.save(os.getcwd() + '\\actual_snap' + str(int(time.time())) + '.png', 'PNG')
     return a
 
@@ -115,21 +115,21 @@ def Go():
         # click first box
         mousePos(Cord.first_box)
         leftClick()
-        print 'first'
+        print ('first')
         #time.sleep(.1)
         return
     elif dd == colorBox_2():
         # click second oox
         mousePos(Cord.second_box)
         leftClick()
-        print 'second'
+        print ('second')
         #time.sleep(.1)
         return
     elif dd == colorBox_3():
         # click third box
         mousePos(Cord.third_box)
         leftClick()
-        print 'third'
+        print ('third')
         #time.sleep(.1)
         return
 
@@ -143,7 +143,7 @@ class Gpic(tk.Tk):
     def  __init__(self):
         tk.Tk.__init__(self)
         self.title("Bot")
-        self.iconbitmap(os.getcwd() + '\\images\\f.ico')
+        self.iconbitmap(os.getcwd() + '\\images\\Virus.ico')
         self.geometry("315x225+950+400")
         self.resizable(width=tk.FALSE, height=tk.FALSE)
         self.lbl = tk.Label(self, text = "Enter the score")
