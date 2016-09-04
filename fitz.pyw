@@ -16,7 +16,7 @@ import time
 from PIL import ImageOps
 from numpy import *
 import win32api, win32con
-import Tkinter as tk
+import tkinter as tk
 
 # Global
 # --------
@@ -33,7 +33,7 @@ def leftClick():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
     time.sleep(.095)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-    print 'CLICK'
+    print ('CLICK')
 
 def mousePos(cord):
     win32api.SetCursorPos((x_pad + cord[0], y_pad + cord[1]))
@@ -42,7 +42,7 @@ def get_cords():
     x,y = win32api.GetCursorPos()
     x = x - x_pad
     y = y - y_pad
-    print x,y
+    print (x,y)
 
 color_text = {
     34400: 'green',
